@@ -1,3 +1,6 @@
+using System;
+using System.IO;
+
 namespace CadastroVendaPoo.classes
 {
     /// <summary>
@@ -35,7 +38,31 @@ namespace CadastroVendaPoo.classes
 
 
 
+ public string Salvar()
+        {
+            string msg = "";
+            StreamWriter escrever = null;
+            try
+            {
+                escrever = new StreamWriter("produtos.csv", true);
+                escrever.WriteLine(id + ";" +nomeproduto + ";" + descricao + ";" + preco);
+                msg = "ARQUIVO SALVO COM SUCESSO";
 
+
+            }
+            catch (Exception e)
+            {
+                msg = "Erro ao tentar manipular o arquivo " + e.Message;
+
+            }
+            finally
+            {
+                escrever.Close();
+            }
+
+
+            return msg;
+        }
 
     }
 

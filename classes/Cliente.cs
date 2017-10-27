@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 namespace CadastroVendaPoo.classes
 {
@@ -39,6 +40,32 @@ namespace CadastroVendaPoo.classes
         public string Email { get { return email; } set { email = value; } }
         public string Cpf { get { return cpf; } set { cpf = value; } }
         public DateTime Datacadastra { get { return datacadastro; } set { datacadastro = value; } }
+
+        public string Salvar()
+        {
+            string msg = "";
+            StreamWriter escrever = null;
+            try
+            {
+                escrever = new StreamWriter("cliente.csv", true);
+                escrever.WriteLine(nome + ";" + email + ";" + cpf + ";" + datacadastro);
+                msg = "ARQUIVO SALVO COM SUCESSO";
+
+
+            }
+            catch (Exception e)
+            {
+                msg = "Erro ao tentar manipular o arquivo " + e.Message;
+
+            }
+            finally
+            {
+                escrever.Close();
+            }
+
+
+            return msg;
+        }
 
 
 
