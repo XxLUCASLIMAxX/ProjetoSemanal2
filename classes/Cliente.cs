@@ -2,18 +2,29 @@ using System;
 
 namespace CadastroVendaPoo.classes{
 
-
-public class Clientes{
+/// <summary>
+/// A classe cliente possui informações sobre o cliente
+/// </summary>
+public class Cliente{
     private string nome;
     private string email;
     private string cpf;
 
     private DateTime datacadastro;
 
-
-    private Clientes(){
+/// <summary>
+/// constroi o objeto cliente
+/// </summary>
+   public Cliente(){
     }
-    public Clientes(string nome,string email,string cpf,DateTime datacadastro)
+    /// <summary>
+    /// Constroi o objeto cliente e necessita de parametros
+    /// </summary>
+    /// <param name="nome">String</param>
+    /// <param name="email">String</param>
+    /// <param name="cpf">String</param>
+    /// <param name="datacadastro">DateTime</param>
+    public Cliente(string nome,string email,string cpf,DateTime datacadastro)
     {
         this.nome=nome;
         this.email=email;
