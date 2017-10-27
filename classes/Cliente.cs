@@ -41,7 +41,7 @@ namespace CadastroVendaPoo.classes
         public string Cpf { get { return cpf; } set { cpf = value; } }
         public DateTime Datacadastro { get { return datacadastro; } set { datacadastro = value; } }
 
-      
+
 
 
 

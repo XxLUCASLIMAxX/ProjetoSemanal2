@@ -1,17 +1,20 @@
 using System;
 using System.IO;
 
-namespace CadastroVendaPoo.classes{
+namespace CadastroVendaPoo.classes
+{
 
-public class SalvarProduto{
+    public class SalvarProduto
+    {
 
-    public string salvar(Produto pr){
-        string msg="";
-         StreamWriter escrever = null;
+        public string salvar(Produto pr)
+        {
+            string msg = "";
+            StreamWriter escrever = null;
             try
             {
                 escrever = new StreamWriter("cadProduto.csv", true);
-                escrever.WriteLine(pr.Id + ";" +pr.Nomeproduto + ";" + pr.Descricao + ";" + pr.Preco);
+                escrever.WriteLine(pr.Id + ";" + pr.Nomeproduto + ";" + pr.Descricao + ";" + pr.Preco);
                 msg = "PRODUTO SALVO COM SUCESSO";
 
 
@@ -33,9 +36,9 @@ public class SalvarProduto{
 
 
 
-        return msg;
+            return msg;
+        }
     }
-}
 
 
 }

@@ -26,7 +26,7 @@ namespace CadastroVendaPoo.classes
         public DateTime Datavenda { get { return datavenda; } set { datavenda = value; } }
 
 
-         
+
 
     }
 }

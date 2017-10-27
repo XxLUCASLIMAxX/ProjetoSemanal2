@@ -1,16 +1,19 @@
 using System;
 using System.IO;
 
-namespace CadastroVendaPoo.classes{
-    public class SalvarVenda{
+namespace CadastroVendaPoo.classes
+{
+    public class SalvarVenda
+    {
 
-        public string Salvar(Venda v){
-            string msg="";
-             StreamWriter escrever = null;
+        public string Salvar(Venda v)
+        {
+            string msg = "";
+            StreamWriter escrever = null;
             try
             {
                 escrever = new StreamWriter("cadVenda.csv", true);
-                escrever.WriteLine(v.Cpf+ ";" + v.Id + ";" + v.Datavenda);
+                escrever.WriteLine(v.Cpf + ";" + v.Id + ";" + v.Datavenda);
                 msg = "ARQUIVO SALVO COM SUCESSO";
 
 
@@ -25,8 +28,8 @@ namespace CadastroVendaPoo.classes{
                 escrever.Close();
             }
 
-            
-            
+
+
 
 
 
