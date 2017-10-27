@@ -9,6 +9,16 @@ namespace CadastroVendaPoo
         {
             menu();
         }
+        static void cadVend(){
+            Venda ven= new Venda();
+            SalvarVenda v = new SalvarVenda();
+            Console.Write("Digite o cpf do cliente: ");
+            ven.Cpf=Console.ReadLine();
+            Console.Write("Digite o id do produto");
+            ven.Id=Int32.Parse(Console.ReadLine());
+            ven.Datavenda=DateTime.Now.Date;
+            v.Salvar(ven);
+        }
 
         static void cadProd()
         {
@@ -69,6 +79,7 @@ namespace CadastroVendaPoo
                 {
                     case 1: cadCli(); break;
                     case 2: cadProd(); break;
+                     case 3: cadVend(); break;
 
                     case 9: Console.Clear();Console.WriteLine("TCHAU"); break;
                     default: Console.WriteLine("Numero incorreto "); break;
